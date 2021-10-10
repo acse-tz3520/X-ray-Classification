@@ -1,0 +1,37 @@
+acse\_softmax package
+=====================
+
+Submodules
+----------
+
+acse\_softmax.custom\_dataset module
+------------------------------------
+
+.. automodule:: acse_softmax.custom_dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+acse\_softmax.data\_loader module
+---------------------------------
+
+.. automodule:: acse_softmax.data_loader
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+acse\_softmax.main module
+-------------------------
+
+.. automodule:: acse_softmax.main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: acse_softmax
+   :members:
+   :undoc-members:
+   :show-inheritance:

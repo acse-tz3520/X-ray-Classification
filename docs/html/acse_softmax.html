@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>acse_softmax package &#8212; X-ray classification 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="test_all module" href="test_all.html" />
+    <link rel="prev" title="src" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="acse-softmax-package">
+<h1>acse_softmax package<a class="headerlink" href="#acse-softmax-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-acse_softmax.custom_dataset">
+<span id="acse-softmax-custom-dataset-module"></span><h2>acse_softmax.custom_dataset module<a class="headerlink" href="#module-acse_softmax.custom_dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="acse_softmax.custom_dataset.CustomImageTensorDataset">
+<em class="property">class </em><code class="sig-prename descclassname">acse_softmax.custom_dataset.</code><code class="sig-name descname">CustomImageTensorDataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">targets</span></em>, <em class="sig-param"><span class="n">transform</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.custom_dataset.CustomImageTensorDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.utils.data.dataset.T_co</span></code>]</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-acse_softmax.data_loader">
+<span id="acse-softmax-data-loader-module"></span><h2>acse_softmax.data_loader module<a class="headerlink" href="#module-acse_softmax.data_loader" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="acse_softmax.data_loader.load_test_data">
+<code class="sig-prename descclassname">acse_softmax.data_loader.</code><code class="sig-name descname">load_test_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_dir</span></em>, <em class="sig-param"><span class="n">train</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.data_loader.load_test_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load in test data.
+input:
+data_dir, str, path of data folder.
+output:
+np.array(data), np.array of the loaded dataset.
+file_names, list of names of each images.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.data_loader.load_training_data">
+<code class="sig-prename descclassname">acse_softmax.data_loader.</code><code class="sig-name descname">load_training_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_dir</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.data_loader.load_training_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load in training data.
+input: data_dir, str, path of data folder.
+output: np.array(data), np.array of the loaded dataset.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-acse_softmax.main">
+<span id="acse-softmax-main-module"></span><h2>acse_softmax.main module<a class="headerlink" href="#module-acse_softmax.main" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="acse_softmax.main.apply_normalisation">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">apply_normalisation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">mean</span></em>, <em class="sig-param"><span class="n">std</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.apply_normalisation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalise the set X
+input: X, an array of numbers that is ready to be normalised
+output: normalised X</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.evaluate">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">data_loader</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement evaluate function.
+input:
+model, model have been trained.
+data_loader, torch.Tensor, data to be input.
+output:
+y_preds, numpy.array, predicted labels.
+ys, numpy.array, actual labels.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.make_dataloader">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">make_dataloader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em>, <em class="sig-param"><span class="n">batch_size</span></em>, <em class="sig-param"><span class="n">shuffle</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">pin_memory</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">num_workers</span><span class="o">=</span><span class="default_value">8</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.make_dataloader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.make_dataset">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">make_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">train</span></em>, <em class="sig-param"><span class="n">file_path</span></em>, <em class="sig-param"><span class="n">download</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.make_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.set_device">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">set_device</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.set_device" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.set_hyperparameters">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">set_hyperparameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.set_hyperparameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.set_seed">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">set_seed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seed</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.set_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this to set ALL the random seeds to a fixed value and take out any randomness from cuda kernels</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.set_up">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">set_up</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.set_up" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.train">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">optimizer</span></em>, <em class="sig-param"><span class="n">criterion</span></em>, <em class="sig-param"><span class="n">data_loader</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement train function.
+input:
+config, config paramters of wandb.
+model, model to be trained.
+optimiser, optimisation method.
+criterion, a function that calculates loss.
+data_loader, torch.Tensor, data to be input.
+output:
+train_loss, float, loss of training dataset.
+train_accuracy, float, loss of training dataset.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.train_model">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">train_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hyperparameters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.train_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Training model with this function.
+intput:
+plot:, boolean, to tell whether live update is plotted or not.
+output:
+model, final model trained.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="acse_softmax.main.validate">
+<code class="sig-prename descclassname">acse_softmax.main.</code><code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">criterion</span></em>, <em class="sig-param"><span class="n">data_loader</span></em><span class="sig-paren">)</span><a class="headerlink" href="#acse_softmax.main.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement validate function.
+input:
+model, model to be trained.
+optimiser, optimisation method.
+criterion, a function that calculates loss.
+data_loader, torch.Tensor, data to be input.
+output:
+validation_loss, float, loss of validation dataset.
+validation_accuracy, float, accuracy of validation dataset.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-acse_softmax">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-acse_softmax" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">X-ray classification</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">acse_softmax package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-acse_softmax.custom_dataset">acse_softmax.custom_dataset module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-acse_softmax.data_loader">acse_softmax.data_loader module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-acse_softmax.main">acse_softmax.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-acse_softmax">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="test_all.html">test_all module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">src</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">src</a></li>
+      <li>Next: <a href="test_all.html" title="next chapter">test_all module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Team Softmax.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/acse_softmax.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

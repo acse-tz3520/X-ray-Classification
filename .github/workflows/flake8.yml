@@ -1,0 +1,25 @@
+name: ci-pep8
+
+on:
+  # The workflow should trigger when (at the very least) a push is made the main branch
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  # checks the workflow is PEP8 compliant
+  check-pep8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+      - name: Lint with flake8
+        run: |
+          flake8 --ignore E501,E722
