@@ -74,7 +74,7 @@ Feel free to dive in! [Open an issue](https://github.com/acse-2020/acse-4-x-ray-
 
 ### Contributors
 
-This project exists thanks to all the [people](https://github.com/acse-2020/acse-4-x-ray-classification-softmax/graphs/contributors) who contributed.
+This project exists thanks to all the people who contributed.
 
 
 ## License
